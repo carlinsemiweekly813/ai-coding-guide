@@ -6,53 +6,52 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
 
-## 目录
-
-- [为什么需要这个指南？](#为什么需要这个指南)
-- [覆盖工具](#覆盖工具)
-- [通用技巧](#通用技巧)
-- [多工具协作工作流](#多工具协作工作流)
-- [快速开始](#快速开始)
-- [贡献](#贡献)
-- [相关项目](#相关项目)
-- [项目生态教程](ecosystem.md) — 四个项目的安装和组合使用
+<table>
+<tr>
+<td align="center"><strong>9 款工具</strong><br/>全覆盖教程</td>
+<td align="center"><strong>66 个技巧</strong><br/>Claude Code 深度</td>
+<td align="center"><strong>7 套方法论</strong><br/>提示词/调试/测试</td>
+<td align="center"><strong>可复制模板</strong><br/>即装即用配置</td>
+</tr>
+</table>
 
 ---
 
-## 为什么需要这个指南？
+## 🚀 快速开始
 
-AI 编程工具的模型能力已经很强了，但大多数人只用到了 10% 的功能。
+**第一次用？** 三步上手：
+1. 📖 读 [提示词工程](common/prompting.md) — 学会和 AI 说话
+2. 🔧 选你的工具 → 读对应的["快速上手"](#-9-款工具教程)章节
+3. ✂️ 读 [需求拆解](common/task-decomposition.md) — 学会给 AI 分任务
 
-- 你可能只会在 Cursor 里按 Tab 接受补全，不知道 `.cursorrules` 能让它理解你的整个项目
-- 你可能让 Claude Code 帮你写代码，但不知道用 Agent + Skill + Hook 能让它自动执行完整工作流
-- 你可能同时装了好几个工具，但不知道它们可以协作——Claude Code 做架构，Cursor 做实现，Copilot 做补全
-
-**这个指南就是帮你从"能用"到"用好"。**
-
----
-
-## 覆盖工具
-
-| 工具 | 类型 | 指南状态 |
-|------|------|:---:|
-| [Claude Code](claude-code/) | CLI Agent | ✅ |
-| [Cursor](cursor/) | IDE | ✅ |
-| [GitHub Copilot](copilot/) | IDE 插件 | ✅ |
-| [Windsurf](windsurf/) | IDE | ✅ |
-| [Gemini CLI](gemini-cli/) | CLI | ✅ |
-| [Kiro](kiro/) | IDE | ✅ |
-| [Aider](aider/) | CLI | ✅ |
-| [Trae](trae/) | IDE | ✅ |
-| [OpenClaw](openclaw/) | AI Agent 框架 | ✅ |
+**已经在用了？** 直接看：[进阶技巧](#-9-款工具教程) · [多工具协作](#-多工具协作) · [生态项目](#-相关项目)
 
 ---
 
-## 通用技巧
+## 🔧 9 款工具教程
 
-不管你用哪个工具，这些通用方法论都能帮你写出更好的提示词、设计更好的工作流。
+| 工具 | 类型 | 亮点 |
+|------|------|------|
+| [**Claude Code**](claude-code/) | CLI Agent | 66 个技巧，Agent + Skill + Hook 完整工作流 |
+| [**Cursor**](cursor/) | IDE | .cursorrules 配置，Composer Agent 模式 |
+| [**GitHub Copilot**](copilot/) | IDE 插件 | 行内补全 + Agent 模式 + 自定义指令 |
+| [**OpenClaw**](openclaw/) | AI Agent 框架 | 338k Stars，多平台连接 + Skills + Cron 自动化 |
+| [Windsurf](windsurf/) | IDE | Cascade Agent，自动上下文 |
+| [Gemini CLI](gemini-cli/) | CLI | Google 出品，大代码库分析 |
+| [Kiro](kiro/) | IDE | AWS 出品，Spec 驱动开发 |
+| [Aider](aider/) | CLI | Git 原生，支持几乎所有 LLM |
+| [Trae](trae/) | IDE | 字节出品，免费 Claude/GPT，国内直连 |
 
-| 主题 | 说明 |
-|------|------|
+> 每个工具都有：**核心概念 → 快速上手 → 提示词技巧 → 进阶用法 → 配置模板**
+
+---
+
+## 📚 通用方法论
+
+不管用哪个工具，这些方法都能让你写出更好的提示词、设计更高效的工作流：
+
+| 主题 | 解决什么问题 |
+|------|-------------|
 | [提示词工程](common/prompting.md) | AI 编程场景下的提示词技巧，不是通用 prompt engineering |
 | [需求拆解](common/task-decomposition.md) | 把大任务拆成 AI 能一次做好的小任务 |
 | [代码审查](common/code-review.md) | 让 AI 审查代码的最佳实践 |
@@ -63,7 +62,7 @@ AI 编程工具的模型能力已经很强了，但大多数人只用到了 10% 
 
 ---
 
-## 多工具协作工作流
+## 🔗 多工具协作
 
 真正高效的做法不是只用一个工具，而是让不同工具发挥各自的长处。
 
@@ -75,20 +74,32 @@ AI 编程工具的模型能力已经很强了，但大多数人只用到了 10% 
 
 ---
 
-## 快速开始
+## 🌐 相关项目
 
-**第一次用 AI 编程工具？** 从这里开始：
+这几个项目相辅相成，覆盖 AI 编程的完整链路：
 
-1. 读 [提示词工程](common/prompting.md) — 了解怎么和 AI 说话
-2. 选一个你用的工具，读对应指南的"快速上手"章节
-3. 读 [需求拆解](common/task-decomposition.md) — 学会给 AI 分配任务
-4. 读 [上下文管理](common/context-management.md) — 让 AI 保持"聪明"
+```
+学会用工具 → 注入方法论 → 加载专家角色 → 多角色编排 → 安全防护
+(guide)     (superpowers)  (agents)       (orchestrator) (shellward)
+```
 
-**已经用了一段时间？** 直接看：
+| 项目 | 定位 | 说明 | 教程 |
+|------|------|------|------|
+| **本项目** | 📖 教学 | 9 款工具怎么用好，从入门到进阶 | — |
+| [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | 🧠 方法论 | 20 个 skills，让 AI 学会怎么思考和做事（TDD、调试、代码审查等） | [安装与使用](ecosystem.md#1-superpowers-zh--给-ai-注入工作方法论) |
+| [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) | 👤 专家角色 | 187 个专业角色，让 AI 变成安全工程师、DBA、产品经理等 | [安装与使用](ecosystem.md#2-agency-agents-zh--187-个-ai-专家角色) |
+| [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) | 🔗 编排 | 用 YAML 让多个角色协作完成复杂任务 | [安装与使用](ecosystem.md#3-agency-orchestrator--多角色-yaml-编排) |
+| [shellward](https://github.com/jnMetaCode/shellward) | 🛡️ 安全 | 防止 AI Agent 执行危险命令、泄露敏感数据 | [安装与使用](ecosystem.md#4-shellward--ai-agent-安全防护) |
 
-1. 你用的工具的"进阶技巧"章节
-2. [多工具协作工作流](workflows/) — 组合使用效率翻倍
-3. [相关项目](#相关项目) — 方法论、专家角色、多角色编排
+👉 **[完整安装教程和组合使用指南 →](ecosystem.md)**
+
+---
+
+## 💬 社区交流
+
+| 群名 | 群号 | 加入方式 |
+|------|------|---------|
+| AI 编程 & Agent 中文实践群 | **1071280067** | [点击加入](https://qm.qq.com/q/EeNQA9xCxy) |
 
 ---
 
@@ -110,35 +121,6 @@ AI 编程工具的模型能力已经很强了，但大多数人只用到了 10% 
 - [gemini-cli-tips](https://github.com/addyosmani/gemini-cli-tips) — Gemini CLI 技巧
 - [Everything Claude Code](https://github.com/anthropics/everything-claude-code) — 本能评分、AgentShield、多语言规则
 - [BMAD-METHOD](https://github.com/bmadcode/BMAD-METHOD) — 完整 SDLC、Agent 角色、多平台
-
----
-
-## 相关项目
-
-这几个项目相辅相成，覆盖 AI 编程的完整链路：
-
-```
-学会用工具 → 注入方法论 → 加载专家角色 → 多角色编排 → 安全防护
-(guide)     (superpowers)  (agents)       (orchestrator) (shellward)
-```
-
-| 项目 | 定位 | 说明 | 教程 |
-|------|------|------|------|
-| **本项目** | 📖 教学 | 9 款工具怎么用好，从入门到进阶 | — |
-| [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | 🧠 方法论 | 20 个 skills，让 AI 学会怎么思考和做事（TDD、调试、代码审查等） | [安装与使用](ecosystem.md#1-superpowers-zh--给-ai-注入工作方法论) |
-| [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) | 👤 专家角色 | 187 个专业角色，让 AI 变成安全工程师、DBA、产品经理等 | [安装与使用](ecosystem.md#2-agency-agents-zh--187-个-ai-专家角色) |
-| [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) | 🔗 编排 | 用 YAML 让多个角色协作完成复杂任务 | [安装与使用](ecosystem.md#3-agency-orchestrator--多角色-yaml-编排) |
-| [shellward](https://github.com/jnMetaCode/shellward) | 🛡️ 安全 | 防止 AI Agent 执行危险命令、泄露敏感数据 | [安装与使用](ecosystem.md#4-shellward--ai-agent-安全防护) |
-
-👉 **[完整安装教程和组合使用指南 →](ecosystem.md)**
-
----
-
-## 社区交流
-
-| 群名 | 群号 | 加入方式 |
-|------|------|---------|
-| AI 编程 & Agent 中文实践群 | **1071280067** | [点击加入](https://qm.qq.com/q/EeNQA9xCxy) |
 
 ---
 
