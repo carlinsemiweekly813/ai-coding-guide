@@ -1,0 +1,36 @@
+# Aider 项目配置
+# 复制到项目根目录，命名为 .aider.conf.yml
+
+# 模型配置
+model: claude-3-5-sonnet
+# 其他选择：
+# model: deepseek/deepseek-chat      # 便宜，适合日常编码
+# model: ollama/qwen2.5-coder        # 免费，需要本地跑 Ollama
+# model: gpt-4o                       # OpenAI
+
+# Git 配置
+auto-commits: true                     # 每次修改自动 commit
+commit-prefix: "[ai] "                 # commit 前缀，方便区分人工和 AI 修改
+
+# 代码质量
+auto-lint: true                        # 修改后自动跑 linter
+auto-test: true                        # 修改后自动跑测试
+lint-cmd: "ruff check --fix"           # Python lint 命令
+test-cmd: "pytest -x --tb=short"       # 测试命令
+# 其他语言示例：
+# lint-cmd: "eslint --fix"            # JavaScript/TypeScript
+# test-cmd: "npm test"                # Node.js
+# lint-cmd: "golangci-lint run"       # Go
+# test-cmd: "go test ./..."           # Go
+
+# 上下文控制
+map-tokens: 2048                       # repo map 占用的 token 数
+map-refresh: auto                      # 自动刷新 repo map
+
+# 编辑格式
+edit-format: diff                      # diff 格式（省 token）
+# edit-format: whole                   # 完整文件格式（更可靠但贵）
+
+# 界面
+dark-mode: true                        # 深色模式
+stream: true                           # 流式输出

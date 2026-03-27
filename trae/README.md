@@ -126,6 +126,14 @@ Trae 对国内常用组件库支持好：
 
 ---
 
+## 配置模板
+
+| 模板 | 用途 |
+|------|------|
+| [project_rules.md](templates/project_rules.md) | 项目规则模板（React + UmiJS + Ant Design），复制到 `.trae/rules/` |
+
+---
+
 ## 延伸阅读
 
 - [Trae 官方网站](https://trae.ai)

@@ -110,6 +110,14 @@ Cascade 会追踪你的操作。利用这一点：
 
 ---
 
+## 配置模板
+
+| 模板 | 用途 |
+|------|------|
+| [.windsurfrules](templates/windsurfrules.md) | 项目规则模板（Vue 3 + TypeScript），复制到项目根目录重命名为 `.windsurfrules` |
+
+---
+
 ## 延伸阅读
 
 - [Windsurf 官方文档](https://docs.codeium.com/windsurf)

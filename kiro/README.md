@@ -127,6 +127,14 @@ Kiro 的工作流和其他工具不同：
 
 ---
 
+## 配置模板
+
+| 模板 | 用途 |
+|------|------|
+| [steering-always.md](templates/steering-always.md) | Steering 全局规则模板（Java + Spring Boot），复制到 `.kiro/steering/` |
+
+---
+
 ## 延伸阅读
 
 - [Kiro 官方文档](https://kiro.dev/docs)

@@ -183,6 +183,14 @@ git push -u origin feature/add-notifications
 
 ---
 
+## 配置模板
+
+| 模板 | 用途 |
+|------|------|
+| [.aider.conf.yml](templates/aider.conf.yml) | 项目配置模板（含多模型、lint、test 配置），复制到项目根目录 |
+
+---
+
 ## 延伸阅读
 
 - [Aider 官方文档](https://aider.chat/docs/)
