@@ -139,6 +139,18 @@ globs: ["src/components/**/*.tsx"]
 - 必须处理 loading 和 error 状态
 ```
 
+### 用 superpowers-zh 增强 Rules
+
+手动写 Rules 太慢？用 superpowers-zh 一键安装方法论：
+
+```bash
+cd /your/project
+npx superpowers-zh
+# 自动安装到 .cursor/rules/，包含 brainstorming、debugging、verification 等
+```
+
+安装后 Cursor 在匹配文件时会自动加载对应的 skill 规则。
+
 ### 模型选择策略
 
 | 场景 | 推荐模型 | 原因 |
