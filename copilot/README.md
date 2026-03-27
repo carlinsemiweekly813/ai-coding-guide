@@ -122,9 +122,9 @@ def count_business_days(start: date, end: date) -> int:
     # Copilot 会自动补全完整实现
 ```
 
-### 2. 用 Chat Mode 做专项审查
+### 2. 用自定义 Agent 做专项审查
 
-创建 `.github/chatModes/security-reviewer.md`：
+创建 `.github/agents/security-reviewer.agent.md`：
 
 ```markdown
 ---
@@ -138,6 +138,8 @@ description: 按 OWASP Top 10 审查代码安全
 3. 检查敏感数据是否明文存储或日志泄露
 4. 标注风险等级：🔴 严重 / 🟡 中等 / 🟢 低
 ```
+
+在 Chat 中用 `@security-reviewer` 调用这个角色。
 
 ### 3. 利用 Workspace 全局理解
 
@@ -188,6 +190,17 @@ Copilot 支持通过指令文件细化行为：
 | Agent 改错文件 | 多文件修改时动了不该动的 | 用 `#file` 限定范围 |
 | 忽略 .gitignore | Copilot 可能读取 node_modules | 检查设置里的 exclude 配置 |
 | Instructions 太长 | 超过模型上下文窗口 | 精简到关键规则，详细规则拆到 Chat Modes |
+
+---
+
+## 配置模板
+
+直接复制到你的项目里用：
+
+| 模板 | 用途 |
+|------|------|
+| [copilot-instructions.md](templates/copilot-instructions.md) | 项目指引模板，复制到 `.github/copilot-instructions.md` |
+| [security-reviewer.agent.md](templates/security-reviewer.agent.md) | 安全审查角色，复制到 `.github/agents/` |
 
 ---
 

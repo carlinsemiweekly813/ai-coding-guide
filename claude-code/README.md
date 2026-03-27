@@ -306,46 +306,12 @@ git log 看看 src/api/payment.ts 最近的改动，
 
 ## 配置模板
 
-### 推荐的 `.claude/settings.json`
+直接复制到你的项目里用：
 
-```json
-{
-  "permissions": {
-    "allow": [
-      "Read",
-      "Glob",
-      "Grep",
-      "Bash(pnpm test*)",
-      "Bash(pnpm lint*)",
-      "Bash(pnpm typecheck*)",
-      "Bash(git status)",
-      "Bash(git diff*)",
-      "Bash(git log*)"
-    ]
-  }
-}
-```
-
-### 推荐的 CLAUDE.md 结构
-
-```markdown
-# 项目名
-
-## 技术栈
-（框架、语言、数据库、部署平台）
-
-## 目录结构
-（关键目录说明）
-
-## 常用命令
-（dev、test、build、lint）
-
-## 代码规范
-（命名、风格、模式）
-
-## 禁止事项
-（不要动的文件、不要用的方法）
-```
+| 模板 | 用途 |
+|------|------|
+| [CLAUDE.md](templates/CLAUDE.md) | 项目配置文件模板，复制到项目根目录后按需修改 |
+| [settings.json](templates/settings.json) | 权限配置模板，复制到 `.claude/settings.json` |
 
 ---
 

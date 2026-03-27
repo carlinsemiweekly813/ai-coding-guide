@@ -185,13 +185,16 @@ npx superpowers-zh
 
 ## 配置模板
 
+直接复制到你的项目 `.cursor/rules/` 目录下：
+
+| 模板 | 用途 |
+|------|------|
+| [global.cursorrules.md](templates/global.cursorrules.md) | 全局规则（代码风格、命名、禁止事项） |
+| [api.cursorrules.md](templates/api.cursorrules.md) | API 开发规则（仅在 API 目录下生效） |
+
 ### 模型配置
 
 Cursor 的模型选择在设置界面（`Cursor Settings > Models`）中配置，不需要手动编辑 JSON。
-
-- **Tab 补全**：Cursor 使用自己的模型，无需配置
-- **Chat / Composer**：在 `Model` 下拉框选择你偏好的模型
-- **长上下文模式**：部分模型支持 `thinking` 模式，适合复杂推理
 
 ---
 
