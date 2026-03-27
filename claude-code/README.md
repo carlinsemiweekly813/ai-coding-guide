@@ -1,0 +1,311 @@
+# Claude Code 最佳实践
+
+> Claude Code 是 Anthropic 官方的 CLI AI 编程工具。它不只是一个代码补全工具，而是一个能理解整个项目、执行复杂任务的 Agent。
+
+---
+
+## 核心概念
+
+在深入技巧之前，先搞清楚 Claude Code 的几个核心概念：
+
+| 概念 | 说明 | 用途 |
+|------|------|------|
+| **Subagent** | 子进程 Agent，独立执行任务 | 并行处理、隔离上下文 |
+| **Command** | `/` 开头的快捷命令 | 快速执行常用操作 |
+| **Skill** | `.claude/skills/` 下的方法论文件 | 教 AI 怎么做事 |
+| **Hook** | 工具调用前后的钩子脚本 | 自动化校验、通知 |
+| **MCP Server** | Model Context Protocol 服务 | 扩展 AI 能力（数据库、API 等） |
+| **Memory** | 持久化记忆 | 跨对话保留上下文 |
+| **Checkpoint** | 自动保存点 | 安全回滚 |
+
+---
+
+## 快速上手
+
+### 安装
+
+```bash
+# npm 全局安装
+npm install -g @anthropic-ai/claude-code
+
+# 或者直接用 npx
+npx @anthropic-ai/claude-code
+```
+
+### 第一次使用
+
+```bash
+cd /your/project
+claude
+```
+
+进入交互模式后，试试这几个命令：
+
+```
+# 了解项目
+> 这个项目是做什么的？帮我梳理一下架构
+
+# 做一个小任务
+> 给 utils/string.ts 加一个 truncate 函数，超过指定长度截断并加省略号
+
+# 做大任务（直接描述，Claude Code 会自动规划执行）
+> 重构 src/api/ 下所有接口，统一错误处理格式
+```
+
+### CLAUDE.md — 项目配置文件
+
+在项目根目录创建 `CLAUDE.md`，Claude Code 每次启动都会读取：
+
+```markdown
+# 项目说明
+这是一个 Next.js 14 + TypeScript 的电商后台管理系统。
+
+# 代码规范
+- 使用 TypeScript strict mode
+- 组件用 PascalCase 命名
+- API 路由放在 src/app/api/ 下
+- 测试用 Vitest，放在 __tests__/ 下
+
+# 常用命令
+- 启动开发：pnpm dev
+- 跑测试：pnpm test
+- 类型检查：pnpm typecheck
+- Lint：pnpm lint
+
+# 注意事项
+- 不要修改 src/legacy/ 下的代码，那是旧版本兼容层
+- 数据库 migration 必须通过 drizzle-kit 生成，不要手写 SQL
+```
+
+---
+
+## 提示词技巧
+
+### 1. 给足上下文，一次说清楚
+
+```
+❌ 差：加个登录功能
+✅ 好：给 src/app/api/ 加一个 JWT 登录接口。用 bcrypt 验证密码，
+    token 过期时间 7 天，错误返回统一的 { code, message } 格式。
+    参考 src/app/api/register/route.ts 的风格。
+```
+
+### 2. 指定参考文件
+
+```
+参考 src/components/UserTable.tsx 的风格，
+给 src/components/ 新建一个 OrderTable.tsx，
+支持分页、排序、搜索，用 TanStack Table。
+```
+
+### 3. 先让它分析，再让它动手
+
+```
+先读 src/services/payment.ts 和 src/services/order.ts，
+分析一下现在的支付流程有什么问题，
+给出改进方案，确认后再改。
+```
+
+### 4. 限制范围
+
+```
+只改 src/utils/date.ts 这一个文件。
+不要动其他文件，不要加新依赖。
+```
+
+### 5. 用否定句划红线
+
+```
+实现缓存功能。
+不要用 Redis，用内存缓存。
+不要引入新依赖，用 Map 实现。
+不要修改现有接口的签名。
+```
+
+---
+
+## 进阶技巧
+
+### Agent 能力
+
+Claude Code 本身就是 Agent——直接描述任务，它会自主规划和执行：
+
+```
+> 给整个项目加上单元测试，覆盖率目标 80%
+```
+
+Claude Code 会自己：读代码 → 制定计划 → 写测试 → 跑测试 → 修复失败 → 验证通过
+
+> **提示**：不需要特殊命令或 flag。直接描述你想要的结果，Claude Code 会自动决定是否需要多步骤执行。
+
+### Subagent 并行
+
+大任务可以拆成多个 Subagent 并行执行：
+
+```
+同时做这三件事：
+1. 给 src/api/users.ts 加分页参数
+2. 给 src/api/orders.ts 加日期筛选
+3. 给 src/api/products.ts 加搜索功能
+用 subagent 并行执行，每个独立完成。
+```
+
+### Skill 文件
+
+Skill 是最强大的功能之一。在 `.claude/skills/` 下放方法论文件，AI 会自动加载：
+
+```
+.claude/skills/
+├── brainstorming.md      # 需求分析流程
+├── debugging.md          # 调试方法论
+├── code-review.md        # 代码审查规范
+└── verification.md       # 完成前验证
+```
+
+推荐使用 [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) 提供的 20 个经过实战验证的 skill。
+
+### Hook 自动化
+
+Hook 在工具调用前后自动执行脚本：
+
+```json
+// .claude/settings.json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "echo 'About to run a command'" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          { "type": "command", "command": "pnpm lint --fix" }
+        ]
+      }
+    ]
+  }
+}
+```
+
+> Hook 的触发点有 `PreToolUse`、`PostToolUse`、`Notification` 等，每个触发点下用 `matcher` 匹配工具名。详见 [官方文档](https://docs.anthropic.com/en/docs/claude-code/hooks)。
+
+用途：
+- 每次修改文件后自动跑相关测试
+- 每次提交前自动 lint
+- 每次创建文件后自动加版权头
+
+### Git Worktree 隔离开发
+
+做实验性改动时，用 worktree 隔离，不影响主分支：
+
+```
+在 git worktree 里做这个重构。
+如果效果好就合并，不好就丢弃。
+```
+
+### Memory 跨对话记忆
+
+Claude Code 可以在 `~/.claude/` 下存储记忆，跨对话使用：
+
+```
+记住：这个项目的部署用的是 Vercel，
+CI 用 GitHub Actions，数据库是 Supabase PostgreSQL。
+以后做部署相关的任务都要考虑这些。
+```
+
+---
+
+## 调试技巧
+
+### 1. 让它看日志，不要让它猜
+
+```
+❌ 差：测试挂了，帮我修
+✅ 好：跑 pnpm test src/api/users.test.ts，
+    把失败的测试输出贴出来，分析根因后再修。
+```
+
+### 2. 缩小范围
+
+```
+只看 src/services/auth.ts 第 45-80 行的逻辑，
+用户反馈说"刷新 token 后还是提示过期"。
+先分析可能的原因，不要直接改。
+```
+
+### 3. 对比分析
+
+```
+git log 看看 src/api/payment.ts 最近的改动，
+对比改动前后的逻辑，找出哪次改动引入了这个 bug。
+```
+
+---
+
+## 常见陷阱
+
+| 陷阱 | 说明 | 解决 |
+|------|------|------|
+| 上下文溢出 | 对话太长 AI 变笨 | 定期开新对话，用 CLAUDE.md 传递上下文 |
+| 幻觉 API | AI 编造不存在的 API | 让它先查文档或 `grep` 确认 |
+| 过度重构 | 你说修个 bug 它把整个文件重写了 | 明确说"只改这一处，不要重构" |
+| 测试没跑 | AI 说"完成了"但没验证 | 用 verification skill 或 hook 强制验证 |
+| 忽略错误处理 | 快速实现但没考虑异常 | 在提示词里明确要求错误处理 |
+
+---
+
+## 配置模板
+
+### 推荐的 `.claude/settings.json`
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(pnpm test*)",
+      "Bash(pnpm lint*)",
+      "Bash(pnpm typecheck*)",
+      "Bash(git status)",
+      "Bash(git diff*)",
+      "Bash(git log*)"
+    ]
+  }
+}
+```
+
+### 推荐的 CLAUDE.md 结构
+
+```markdown
+# 项目名
+
+## 技术栈
+（框架、语言、数据库、部署平台）
+
+## 目录结构
+（关键目录说明）
+
+## 常用命令
+（dev、test、build、lint）
+
+## 代码规范
+（命名、风格、模式）
+
+## 禁止事项
+（不要动的文件、不要用的方法）
+```
+
+---
+
+## 延伸阅读
+
+- [Claude Code 官方文档](https://docs.anthropic.com/en/docs/claude-code)
+- [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) — 20 个 AI 编程 skills
+- [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) — 187 个 AI 专家角色

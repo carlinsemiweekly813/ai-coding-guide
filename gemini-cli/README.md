@@ -1,0 +1,154 @@
+# Gemini CLI 最佳实践
+
+> Gemini CLI 是 Google 的命令行 AI 编程工具。最大优势：**免费额度充足 + 超大上下文窗口（2M tokens）**。适合大代码库分析、长任务执行、以及预算敏感的个人开发者。
+
+---
+
+## 核心概念
+
+| 概念 | 说明 | 用途 |
+|------|------|------|
+| **GEMINI.md** | 项目配置文件 | 类似 Claude Code 的 CLAUDE.md |
+| **Tools** | 内置工具（读写文件、执行命令等） | Agent 能力基础 |
+| **Extensions** | 扩展插件 | 连接 Google 服务和第三方 API |
+| **Context Window** | 2M tokens | 能一次性理解超大代码库 |
+| **Sandbox** | 安全沙箱 | 隔离执行不信任的代码 |
+
+---
+
+## 快速上手
+
+### 安装
+
+```bash
+npm install -g @google/gemini-cli
+```
+
+安装后运行 `gemini` 进入交互模式，按提示登录 Google 账号即可。
+
+> 最新安装方式请参考 [官方仓库](https://github.com/google-gemini/gemini-cli)。
+
+### GEMINI.md — 项目配置
+
+```markdown
+# 项目背景
+这是一个 Go 微服务项目，包含 12 个服务。
+
+# 目录结构
+- cmd/         — 各服务入口
+- internal/    — 内部包
+- pkg/         — 公共包
+- proto/       — Protobuf 定义
+- deployments/ — K8s 配置
+
+# 常用命令
+- 编译所有服务：make build-all
+- 跑测试：make test
+- 生成 proto：make proto-gen
+- 本地启动：docker compose up
+
+# 注意
+- 服务间通信用 gRPC，不要用 HTTP
+- 配置统一走 Viper，不要硬编码
+```
+
+---
+
+## 超大上下文的正确用法
+
+Gemini CLI 的 2M tokens 上下文窗口是它的核心优势。但大不等于好——关键是用对。
+
+### 适合大上下文的场景
+
+```
+# 1. 整个项目架构分析
+读取整个 src/ 目录，画出模块依赖关系图。
+哪些模块耦合度最高？给出解耦建议。
+
+# 2. 全局重构评估
+如果要把 ORM 从 GORM 换成 sqlc，
+影响范围有多大？列出所有需要改的文件。
+
+# 3. 跨服务问题排查
+用户下单后没收到通知。
+从 order-service 到 notification-service 的完整调用链，
+每个环节的代码都看一下，找出哪里断了。
+```
+
+### 不适合大上下文的场景
+
+```
+❌ 不要把整个 node_modules 塞进去
+❌ 不要一次分析 10 万行代码然后问"有没有 bug"
+❌ 不要用大上下文替代精确定位
+```
+
+---
+
+## 提示词技巧
+
+### 1. 利用免费额度做批量分析
+
+```
+依次检查 src/ 下每个 Go 文件的错误处理：
+1. 有没有忽略 error 返回值（_ = xxx）
+2. 有没有用 fmt.Println 打印错误而不是 log
+3. 有没有 panic 在非 main 函数里
+列出所有问题，按文件分组。
+```
+
+### 2. 代码库导航
+
+```
+我刚接手这个项目，帮我理解：
+1. 请求从 HTTP 进来到返回响应，经过哪些层？
+2. 数据库操作封装在哪一层？
+3. 认证和授权是怎么做的？
+4. 有没有文档或注释说明架构决策？
+给我一份简洁的架构概览。
+```
+
+### 3. 代码迁移评估
+
+```
+这个项目想从 Python 2 迁移到 Python 3。
+扫描所有 .py 文件，找出：
+1. print 语句（不是函数）
+2. unicode/str 类型问题
+3. 已废弃的标准库用法
+4. 不兼容的第三方库版本
+按迁移优先级排序。
+```
+
+---
+
+## 与 Claude Code 的区别
+
+| 维度 | Gemini CLI | Claude Code |
+|------|-----------|-------------|
+| 上下文窗口 | **2M tokens**（最大） | 200K tokens |
+| 免费额度 | **充足** | 有限 |
+| Agent 能力 | ★★☆ | ★★★ |
+| 工具生态 | Google 服务集成好 | MCP 生态最丰富 |
+| Skill 支持 | 有（`.gemini/skills/`） | 有（`.claude/skills/`） |
+| 适合 | 大代码库分析、预算敏感 | 复杂 Agent 任务、需要强执行力 |
+
+**建议组合**：用 Gemini CLI 做大规模分析和理解，用 Claude Code 做精确的修改和执行。
+
+---
+
+## 常见陷阱
+
+| 陷阱 | 说明 | 解决 |
+|------|------|------|
+| 上下文太大反而慢 | 2M 全塞满处理很慢 | 只在需要全局视角时用大上下文 |
+| 免费额度用完 | 高频使用会触发限制 | 合理安排，大任务集中做 |
+| 工具能力弱于 Claude Code | 文件操作、命令执行不如 CC | 分析用 Gemini，执行用 CC |
+
+---
+
+## 延伸阅读
+
+- [Gemini CLI 官方文档](https://github.com/google-gemini/gemini-cli)
+- [gemini-cli-tips](https://github.com/addyosmani/gemini-cli-tips) — Addy Osmani 的 30 个技巧
+- [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) — Skills 方法论（也支持 Gemini CLI）
