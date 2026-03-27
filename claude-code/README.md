@@ -241,6 +241,28 @@ CI 用 GitHub Actions，数据库是 Supabase PostgreSQL。
 以后做部署相关的任务都要考虑这些。
 ```
 
+### 多智能体编排
+
+当任务复杂到需要多个 AI 角色协作时（比如架构师设计 → 开发者实现 → 审查员审查），可以用 [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) 做 YAML 编排：
+
+```yaml
+# workflow.yaml
+name: 新功能开发
+steps:
+  - agent: 软件架构师
+    task: 分析需求，输出技术方案
+    output: design.md
+
+  - agent: 后端开发者
+    task: 按 design.md 实现代码
+    input: design.md
+
+  - agent: 代码审查员
+    task: 审查代码质量和安全性
+```
+
+适合场景：团队级复杂任务、需要多轮审查的交付、标准化开发流程。
+
 ---
 
 ## 调试技巧
