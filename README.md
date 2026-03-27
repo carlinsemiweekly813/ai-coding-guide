@@ -121,13 +121,13 @@ AI 编程工具的模型能力已经很强了，但大多数人只用到了 10% 
 (guide)     (superpowers)  (agents)       (orchestrator) (shellward)
 ```
 
-| 项目 | 定位 | 说明 |
-|------|------|------|
-| **本项目** | 📖 教学 | 8 款工具怎么用好，从入门到进阶 |
-| [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | 🧠 方法论 | 20 个 skills，让 AI 学会怎么思考和做事（TDD、调试、代码审查等） |
-| [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) | 👤 专家角色 | 187 个专业角色，让 AI 变成安全工程师、DBA、产品经理等 |
-| [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) | 🔗 编排 | 用 YAML 让多个角色协作完成复杂任务 |
-| [shellward](https://github.com/jnMetaCode/shellward) | 🛡️ 安全 | 防止 AI Agent 执行危险命令、泄露敏感数据 |
+| 项目 | 定位 | 说明 | 教程 |
+|------|------|------|------|
+| **本项目** | 📖 教学 | 8 款工具怎么用好，从入门到进阶 | — |
+| [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | 🧠 方法论 | 20 个 skills，让 AI 学会怎么思考和做事（TDD、调试、代码审查等） | [安装与使用](ecosystem.md#1-superpowers-zh--给-ai-注入工作方法论) |
+| [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) | 👤 专家角色 | 187 个专业角色，让 AI 变成安全工程师、DBA、产品经理等 | [安装与使用](ecosystem.md#2-agency-agents-zh--187-个-ai-专家角色) |
+| [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) | 🔗 编排 | 用 YAML 让多个角色协作完成复杂任务 | [安装与使用](ecosystem.md#3-agency-orchestrator--多角色-yaml-编排) |
+| [shellward](https://github.com/jnMetaCode/shellward) | 🛡️ 安全 | 防止 AI Agent 执行危险命令、泄露敏感数据 | [安装与使用](ecosystem.md#4-shellward--ai-agent-安全防护) |
 
 👉 **[完整安装教程和组合使用指南 →](ecosystem.md)**
 
