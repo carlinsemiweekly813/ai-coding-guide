@@ -193,6 +193,8 @@ Tips for more accurate Copilot completions:
 | Ignores .gitignore | Copilot may read node_modules | Check exclude settings in configuration |
 | Instructions too long | Exceeds model context window | Trim to essential rules, move details into Chat Modes |
 
+👉 **Deep dive**: [Copilot Pitfalls](../pitfalls/copilot.en.md) — 8 real-world traps (Agent reads .env / MCP silent fail / free tier throttling and more), each with Symptom / Cause / Recovery / Prevention
+
 ---
 
 ## Configuration Templates

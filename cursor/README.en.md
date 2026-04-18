@@ -183,6 +183,8 @@ Once installed, Cursor automatically loads the matching skill rules for relevant
 | Completion too aggressive | Tab completion generates too much code at once | Adjust completion length in settings, or press `Esc` to reject |
 | Not enough context | AI doesn't understand project structure | Use `@folder` to reference key directories, write good `.cursorrules` |
 
+👉 **Deep dive**: [Cursor Pitfalls](../pitfalls/cursor.en.md) — 8 real-world traps (Composer rogue / @file silent fail / stale Notepads and more), each with Symptom / Cause / Recovery / Prevention
+
 ---
 
 ## Configuration Templates

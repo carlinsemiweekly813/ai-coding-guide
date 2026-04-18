@@ -181,6 +181,8 @@ npx superpowers-zh
 | 补全太激进 | Tab 补全一次生成太多代码 | 设置里调整补全长度，或按 `Esc` 拒绝 |
 | 上下文不够 | AI 不理解项目结构 | 用 `@folder` 引用关键目录，写好 `.cursorrules` |
 
+👉 **深度展开版**：[Cursor 陷阱合集](../pitfalls/cursor.md) — 8 个真实踩坑场景（Composer 脱缰 / @file 失效 / Notepads 过期 等），每个带症状 / 根因 / 出坑 / 预防
+
 ---
 
 ## 配置模板

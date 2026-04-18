@@ -191,6 +191,8 @@ Copilot 支持通过指令文件细化行为：
 | 忽略 .gitignore | Copilot 可能读取 node_modules | 检查设置里的 exclude 配置 |
 | Instructions 太长 | 超过模型上下文窗口 | 精简到关键规则，详细规则拆到 Chat Modes |
 
+👉 **深度展开版**：[Copilot 陷阱合集](../pitfalls/copilot.md) — 8 个真实踩坑场景（Agent 读 .env / MCP 失效 / 免费限流 等），每个带症状 / 根因 / 出坑 / 预防
+
 ---
 
 ## 配置模板
