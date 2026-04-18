@@ -1,0 +1,57 @@
+# Lychee link checker configuration
+# https://lychee.cli.rs/usage/config/
+
+# 请求超时（秒）
+timeout = 20
+
+# 最大重试次数
+max_retries = 2
+
+# 每个 host 最大并发
+max_concurrency = 8
+
+# 接受的 HTTP 状态码
+accept = [200, 201, 202, 204, 206, 301, 302, 303, 304, 307, 308, 429]
+
+# User-Agent（部分网站会拒绝默认 UA）
+user_agent = "Mozilla/5.0 (compatible; lychee-link-checker)"
+
+# 排除路径
+exclude_path = [
+  "node_modules",
+  ".git",
+  ".github/ISSUE_TEMPLATE",
+]
+
+# 排除链接
+exclude = [
+  # 本地和私有
+  "^https?://localhost",
+  "^https?://127\\.0\\.0\\.1",
+  "^https?://.*\\.local",
+
+  # 邮件和电话
+  "^mailto:",
+  "^tel:",
+
+  # 锚点（同页面跳转，lychee 默认会校验，但 GitHub 的表情符 anchor 经常误报）
+  "^#",
+
+  # 社交链接常见反爬
+  "^https?://(www\\.)?twitter\\.com",
+  "^https?://(www\\.)?x\\.com",
+  "^https?://(www\\.)?linkedin\\.com",
+
+  # QQ 链接跳转
+  "^https?://qm\\.qq\\.com",
+]
+
+# 对私有仓库的 GitHub URL 跳过认证检查（公开仓库不影响）
+github_token = ""
+
+# 跳过 fragment（#section）校验，避免跨仓 anchor 误报
+include_fragments = false
+
+# 缓存
+cache = true
+max_cache_age = "1d"
