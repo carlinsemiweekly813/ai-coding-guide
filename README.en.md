@@ -89,7 +89,7 @@ Learn the tools → Inject methodologies → Load expert roles → Orchestrate r
 |---------|---------|-------------|
 | **This repo** | Learning | Practical guides for 9 AI coding tools |
 | [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | Methodology | 20 skills for AI coding tools — TDD, debugging, code review, and more |
-| [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) | Expert Roles | 187 professional roles — turn AI into a security engineer, DBA, PM, etc. |
+| [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) | Expert Roles | 211 professional roles — turn AI into a security engineer, DBA, PM, etc. |
 | [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) | Orchestration | YAML-based multi-role collaboration for complex tasks |
 | [shellward](https://github.com/jnMetaCode/shellward) | Safety | Prevent AI agents from running dangerous commands or leaking sensitive data |
 
