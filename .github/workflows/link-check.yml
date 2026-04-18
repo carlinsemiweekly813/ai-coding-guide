@@ -44,12 +44,11 @@ jobs:
 
           # .md 没对应 .en.md
           while IFS= read -r -d '' file; do
-            # 跳过不需要双语的文件：模板、license、贡献指南等
+            # 跳过不需要双语的文件：模板、license 等
             case "$file" in
               *.en.md) continue;;
               ./node_modules/*) continue;;
               ./LICENSE*) continue;;
-              ./CONTRIBUTING.md) continue;;
               */templates/*) continue;;       # 配置模板是项目专属，不翻译
             esac
             en="${file%.md}.en.md"
