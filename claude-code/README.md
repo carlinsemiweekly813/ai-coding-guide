@@ -426,6 +426,8 @@ git log 看看 src/api/payment.ts 最近的改动，
 | 测试没跑 | AI 说"完成了"但没验证 | 用 verification skill 或 hook 强制验证 |
 | 忽略错误处理 | 快速实现但没考虑异常 | 在提示词里明确要求错误处理 |
 
+👉 **深度展开版**：[Claude Code 陷阱合集](../pitfalls/claude-code.md) — 8 个真实踩坑场景，每个带症状 / 根因 / 出坑 / 预防
+
 ---
 
 ## 配置模板

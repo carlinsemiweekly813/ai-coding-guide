@@ -428,6 +428,8 @@ Organized by category, one tip per row. Bookmark this section — it's all you n
 | Tests not run | AI says "done" without verifying | Use a verification skill or hook to force validation |
 | Missing error handling | Quick implementation with no edge case handling | Explicitly require error handling in your prompt |
 
+👉 **Deep dive**: [Claude Code Pitfalls](../pitfalls/claude-code.en.md) — 8 real-world traps, each with Symptom / Cause / Recovery / Prevention
+
 ---
 
 ## Configuration Templates

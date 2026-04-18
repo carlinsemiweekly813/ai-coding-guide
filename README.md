@@ -79,6 +79,7 @@
 | 工作流 | 说明 |
 |--------|------|
 | [实战场景脚本](workflows/scenarios.md) | 重构 / 协作开发 / 补测试——3 个端到端对话脚本，复制改就能用 |
+| [⚠️ 陷阱合集 (Claude Code)](pitfalls/claude-code.md) | 8 个真实踩坑场景，症状 / 根因 / 出坑 / 预防 四段式展开 |
 | [Claude Code + Cursor 协作](workflows/claude-code-cursor.md) | Claude Code 做架构设计和复杂重构，Cursor 做日常编码 |
 | [Claude Code + Copilot 协作](workflows/claude-code-copilot.md) | Claude Code 做 Agent 任务，Copilot 做行内补全 |
 | [多工具选型指南](workflows/tool-selection.md) | 什么场景用什么工具，一张表说清楚 |

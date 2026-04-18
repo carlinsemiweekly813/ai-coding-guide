@@ -79,6 +79,7 @@ How real projects run end-to-end, and how different tools play to their strength
 | Workflow | Description |
 |----------|-------------|
 | [Real-World Scenarios](workflows/scenarios.en.md) | Refactor, collaborative dev, test backfill — 3 end-to-end scripts, copy and adapt |
+| [⚠️ Pitfalls (Claude Code)](pitfalls/claude-code.en.md) | 8 real-world traps, each with Symptom / Cause / Recovery / Prevention |
 | [Claude Code + Cursor](workflows/claude-code-cursor.en.md) | Claude Code for architecture & complex refactoring, Cursor for daily coding |
 | [Claude Code + Copilot](workflows/claude-code-copilot.en.md) | Claude Code for agentic tasks, Copilot for inline completions |
 | [Tool Selection Guide](workflows/tool-selection.en.md) | Which tool for which scenario — one table to rule them all |
