@@ -183,6 +183,19 @@ git push -u origin feature/add-notifications
 
 ---
 
+## 常见陷阱
+
+| 陷阱 | 说明 | 解决 |
+|------|------|------|
+| auto-commit 吃变更 | 自动提交把你未 stage 的工作一起吞了 | 会话前 `git stash`，或开独立分支 |
+| /add 漏依赖 | 上下文不全，AI 靠文件名脑补 | 让它先 /ask 列出所有依赖再 /add |
+| 模型切换质量塌 | 切到便宜模型后产出质量断崖下跌 | 分任务类型切，复杂任务回 Claude |
+| lint 循环烧 token | auto-lint 失败反复让 LLM 修 | `--max-reflections 3`，lint 用 `--fix` 模式 |
+
+👉 **深度展开版**：[Aider 陷阱合集](../pitfalls/aider.md) — 7 个真实踩坑场景，每个带症状 / 根因 / 出坑 / 预防
+
+---
+
 ## 配置模板
 
 | 模板 | 用途 |

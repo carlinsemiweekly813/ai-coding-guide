@@ -34,7 +34,7 @@
 | Cost-conscious / solo dev | [Cheatsheet](cheatsheet.en.md) → [Gemini CLI](gemini-cli/) or [Aider](aider/) + local models |
 | Team / high-quality delivery | [Kiro](kiro/) → [Code Review](common/code-review.en.md) → [Testing](common/testing.en.md) |
 
-**Already using AI tools?** Jump to: [Cheatsheet](cheatsheet.en.md) · [Advanced Tips](#-9-tool-guides) · [Real-World Workflows](#-real-world-workflows) · [Ecosystem](#-ecosystem)
+**Already using AI tools?** Jump to: [Cheatsheet](cheatsheet.en.md) · [Advanced Tips](#9-tool-guides) · [Real-World Workflows](#real-world-workflows) · [Ecosystem](#ecosystem)
 
 ---
 

@@ -185,6 +185,19 @@ git push -u origin feature/add-notifications
 
 ---
 
+## Common Pitfalls
+
+| Pitfall | Description | Solution |
+|---------|-------------|----------|
+| Auto-commit swallows WIP | Auto-commit sweeps your unstaged changes into the commit | `git stash` before session, or use a dedicated branch |
+| `/add` misses deps | Incomplete context, AI guesses from filenames | Have it `/ask` list dependencies first, then `/add` all of them |
+| Model-switch quality drop | Cheaper model → cliff drop in output quality | Switch by task type; return to Claude for complex work |
+| Lint loop burns tokens | `auto-lint` retries failing checks via LLM | `--max-reflections 3`, use `--fix` linters |
+
+👉 **Deep dive**: [Aider Pitfalls](../pitfalls/aider.en.md) — 7 real-world traps, each with Symptom / Cause / Recovery / Prevention
+
+---
+
 ## Configuration Templates
 
 | Template | Purpose |

@@ -15,12 +15,13 @@
 | [Claude Code](./claude-code.en.md) | 8 | Context overflow / hallucinated APIs / over-refactoring / fake verification / CLAUDE.md ignored / git amend / plan drift / subagent context |
 | [Cursor](./cursor.en.md) | 8 | Composer rogue / Tab blast / .cursorrules too long / @file silent fail / mode confusion / model switching / stale Notepads / stale index |
 | [GitHub Copilot](./copilot.en.md) | 8 | Outdated APIs / Agent reads .env / instructions too long / #file vs @workspace / MCP silent fail / IDE differences / free tier throttling / custom roles not discovered |
+| [Aider](./aider.en.md) | 7 | Auto-commit swallows WIP / /add misses deps / model-switch quality drop / lint loop burns tokens / stale map / Architect→Code drift / amend chaos |
 
 ---
 
 ## Other Tools
 
-Windsurf / Gemini CLI / Kiro / Aider / Trae / OpenClaw pitfall pages aren't written yet. You're welcome to:
+Windsurf / Gemini CLI / Kiro / Trae / OpenClaw pitfall pages aren't written yet. You're welcome to:
 
 1. Check if you've hit any pain points with the tool you use
 2. Send a PR using the template below
