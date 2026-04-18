@@ -21,13 +21,20 @@
 
 ## Getting Started
 
-**New here?** Four steps:
-1. Read [Prompt Engineering](common/prompting.en.md) — learn how to talk to AI coding tools
-2. Pick your tool → read its [Quick Start](#9-tool-guides) section
-3. Read [Task Decomposition](common/task-decomposition.en.md) — learn how to break work into AI-sized chunks
-4. See [Real-World Scenarios](workflows/scenarios.en.md) — 3 end-to-end scripts you can copy
+**Start with the [📋 Cheatsheet](cheatsheet.en.md)** — all 9 tools on one page: type, context window, config files, core commands. Know what to pick, how to set it up, how to use it.
 
-**Already using AI tools?** Jump to: [Advanced Tips](#-9-tool-guides) · [Real-World Workflows](#-real-world-workflows) · [Ecosystem](#-ecosystem)
+**Pick a path based on your profile:**
+
+| You are... | Recommended reading order |
+|------------|---------------------------|
+| Total newcomer to AI coding | [Cheatsheet](cheatsheet.en.md) → [Trae](trae/) (free) → [Prompt Engineering](common/prompting.en.md) |
+| Frontend / daily coding | [Cursor](cursor/) → [Prompt Engineering](common/prompting.en.md) → [Scenarios](workflows/scenarios.en.md) |
+| Backend / refactoring / big projects | [Claude Code](claude-code/) → [Task Decomposition](common/task-decomposition.en.md) → [Scenarios](workflows/scenarios.en.md) |
+| Migrating from Copilot | [Copilot](copilot/) → [Claude Code](claude-code/) (compare) → [Tool Selection](workflows/tool-selection.en.md) |
+| Cost-conscious / solo dev | [Cheatsheet](cheatsheet.en.md) → [Gemini CLI](gemini-cli/) or [Aider](aider/) + local models |
+| Team / high-quality delivery | [Kiro](kiro/) → [Code Review](common/code-review.en.md) → [Testing](common/testing.en.md) |
+
+**Already using AI tools?** Jump to: [Cheatsheet](cheatsheet.en.md) · [Advanced Tips](#-9-tool-guides) · [Real-World Workflows](#-real-world-workflows) · [Ecosystem](#-ecosystem)
 
 ---
 

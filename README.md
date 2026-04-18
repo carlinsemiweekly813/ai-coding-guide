@@ -21,13 +21,20 @@
 
 ## 🚀 快速开始
 
-**第一次用？** 按这四步走：
-1. 📖 读 [提示词工程](common/prompting.md) — 学会和 AI 说话
-2. 🔧 选你的工具 → 读对应的["快速上手"](#-9-款工具教程)章节
-3. ✂️ 读 [需求拆解](common/task-decomposition.md) — 学会给 AI 分任务
-4. 🎯 看 [实战场景脚本](workflows/scenarios.md) — 3 个端到端对话示范，复制改就能用
+**先看一眼 [📋 速查表](cheatsheet.md)** — 9 款工具一页横向对比：类型、上下文、配置文件、常用命令。知道自己选哪个、怎么配、怎么用。
 
-**已经在用了？** 直接看：[进阶技巧](#-9-款工具教程) · [实战工作流](#-实战工作流) · [生态项目](#-相关项目)
+**按画像走推荐路径：**
+
+| 你是... | 推荐顺序 |
+|---------|---------|
+| 纯新手，还没用过 AI 编程 | [速查表](cheatsheet.md) → [Trae](trae/)（免费入门）→ [提示词工程](common/prompting.md) |
+| 前端 / 日常编码为主 | [Cursor](cursor/) → [提示词工程](common/prompting.md) → [实战场景](workflows/scenarios.md) |
+| 后端 / 重构 / 大项目 | [Claude Code](claude-code/) → [需求拆解](common/task-decomposition.md) → [实战场景](workflows/scenarios.md) |
+| 从 Copilot 迁来 | [Copilot](copilot/) → [Claude Code](claude-code/)（对比差异）→ [多工具选型](workflows/tool-selection.md) |
+| 控成本 / 独立开发者 | [速查表](cheatsheet.md) → [Gemini CLI](gemini-cli/) 或 [Aider](aider/) + 本地模型 |
+| 团队协作 / 高质量交付 | [Kiro](kiro/) → [代码审查](common/code-review.md) → [测试策略](common/testing.md) |
+
+**已经在用了？** 直接看：[速查表](cheatsheet.md) · [进阶技巧](#-9-款工具教程) · [实战工作流](#-实战工作流) · [生态项目](#-相关项目)
 
 ---
 
