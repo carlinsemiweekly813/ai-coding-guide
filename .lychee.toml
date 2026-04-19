@@ -46,12 +46,6 @@ exclude = [
   "^https?://qm\\.qq\\.com",
 ]
 
-# 对私有仓库的 GitHub URL 跳过认证检查（公开仓库不影响）
-github_token = ""
-
-# 跳过 fragment（#section）校验，避免跨仓 anchor 误报
-include_fragments = false
-
 # 缓存
 cache = true
 max_cache_age = "1d"

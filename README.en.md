@@ -27,7 +27,7 @@
 
 | You are... | Recommended reading order |
 |------------|---------------------------|
-| Total newcomer to AI coding | [Cheatsheet](cheatsheet.en.md) → [Trae](trae/) (free) → [Prompt Engineering](common/prompting.en.md) |
+| Total newcomer to AI coding | [Cheatsheet](cheatsheet.en.md) → [Copilot](copilot/) (free tier) or [Cursor](cursor/) (free tier) → [Prompt Engineering](common/prompting.en.md) |
 | Frontend / daily coding | [Cursor](cursor/) → [Prompt Engineering](common/prompting.en.md) → [Scenarios](workflows/scenarios.en.md) |
 | Backend / refactoring / big projects | [Claude Code](claude-code/) → [Task Decomposition](common/task-decomposition.en.md) → [Scenarios](workflows/scenarios.en.md) |
 | Migrating from Copilot | [Copilot](copilot/) → [Claude Code](claude-code/) (compare) → [Tool Selection](workflows/tool-selection.en.md) |

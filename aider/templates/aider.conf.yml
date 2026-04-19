@@ -2,7 +2,7 @@
 # 复制到项目根目录，命名为 .aider.conf.yml
 
 # 模型配置
-model: claude-3-5-sonnet
+model: claude-sonnet-4-5
 # 其他选择：
 # model: deepseek/deepseek-chat      # 便宜，适合日常编码
 # model: ollama/qwen2.5-coder        # 免费，需要本地跑 Ollama

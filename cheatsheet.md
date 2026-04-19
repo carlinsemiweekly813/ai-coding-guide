@@ -75,7 +75,7 @@ claude -p "任务" --output-format json   # headless 模式
 # 交互中
 /compact                        # 压缩上下文
 /plan                           # 进入 plan 模式
-Esc Esc                         # 回滚到 checkpoint
+Esc                             # 打断当前生成
 ```
 
 ### Cursor
@@ -139,7 +139,7 @@ Steering 加载模式：
 ```bash
 # 安装与启动
 pip install aider-chat
-aider --model claude-3-5-sonnet
+aider --model claude-sonnet-4-5
 aider --model deepseek/deepseek-chat   # 便宜
 aider --model ollama/qwen2.5-coder     # 本地免费
 

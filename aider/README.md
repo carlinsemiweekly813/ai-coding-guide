@@ -36,7 +36,7 @@ cd /your/project
 aider
 
 # 指定模型
-aider --model claude-3-5-sonnet
+aider --model claude-sonnet-4-5
 
 # 用 DeepSeek（便宜）
 aider --model deepseek/deepseek-chat
@@ -114,7 +114,7 @@ aider --commit-prefix "[ai] "
 
 ```bash
 # 复杂架构设计 — 用最强模型
-aider --model claude-3-5-sonnet
+aider --model claude-sonnet-4-5
 /architect 设计微服务拆分方案
 
 # 日常编码 — 用性价比模型
@@ -134,7 +134,7 @@ aider --model ollama/qwen2.5-coder
 
 ```yaml
 # .aider.conf.yml
-model: claude-3-5-sonnet
+model: claude-sonnet-4-5
 auto-commits: true
 auto-lint: true
 auto-test: true

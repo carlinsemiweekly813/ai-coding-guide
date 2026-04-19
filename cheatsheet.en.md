@@ -77,7 +77,7 @@ claude -p "task" --output-format json   # Headless
 # Inside the session
 /compact                        # Compress context
 /plan                           # Enter plan mode
-Esc Esc                         # Roll back to checkpoint
+Esc                             # Interrupt current generation
 ```
 
 ### Cursor
@@ -141,7 +141,7 @@ Steering load modes:
 ```bash
 # Install & run
 pip install aider-chat
-aider --model claude-3-5-sonnet
+aider --model claude-sonnet-4-5
 aider --model deepseek/deepseek-chat   # Cheap
 aider --model ollama/qwen2.5-coder     # Free, local
 

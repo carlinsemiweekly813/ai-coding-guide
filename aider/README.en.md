@@ -38,7 +38,7 @@ cd /your/project
 aider
 
 # Specify a model
-aider --model claude-3-5-sonnet
+aider --model claude-sonnet-4-5
 
 # Use DeepSeek (cheaper)
 aider --model deepseek/deepseek-chat
@@ -116,7 +116,7 @@ aider --commit-prefix "[ai] "
 
 ```bash
 # Complex architecture design — use the strongest model
-aider --model claude-3-5-sonnet
+aider --model claude-sonnet-4-5
 /architect Design a microservices split plan
 
 # Daily coding — use a cost-effective model
@@ -136,7 +136,7 @@ aider --model ollama/qwen2.5-coder
 
 ```yaml
 # .aider.conf.yml
-model: claude-3-5-sonnet
+model: claude-sonnet-4-5
 auto-commits: true
 auto-lint: true
 auto-test: true

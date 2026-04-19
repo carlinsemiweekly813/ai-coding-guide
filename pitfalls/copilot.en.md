@@ -185,11 +185,11 @@ Either standardize IDE team-wide, or accept JetBrains being a step behind.
 
 **Symptom**
 - Copilot Free worked fine; one day completion latency spikes
-- Chat gets slow, "thinking..." for tens of seconds
-- No error, just slow, with dropped quality (like a downgraded model)
+- Chat requests queue or get outright rejected ("usage limit reached"-style messages)
+- Completions slow down, fewer suggestions
 
 **Cause**
-Copilot Free has monthly caps and rate limits. Hitting them triggers **silent degradation**, not an explicit error. Enterprise users may hit org-level quotas similarly.
+Copilot Free has monthly completion and Chat quotas. As you approach them you get rate-limited; once exceeded, requests are rejected. The notification in VS Code isn't always prominent, so it's easy to miss. Enterprise users may hit org-level quotas similarly.
 
 **Recovery**
 - GitHub Account → Copilot settings to check usage

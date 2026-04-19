@@ -85,9 +85,9 @@ LLMs vary wildly in instruction-following. Same `/architect design a WebSocket n
 Tier in `.aider.conf.yml`:
 
 ```yaml
-model: claude-3-5-sonnet           # Primary
+model: claude-sonnet-4-5           # Primary
 weak-model: deepseek/deepseek-chat # Weak tasks (commit messages, simple completion)
-editor-model: claude-3-5-haiku     # Editor-mode completion
+editor-model: claude-haiku-4-5     # Editor-mode completion
 ```
 
 Or switch **by task type**:
